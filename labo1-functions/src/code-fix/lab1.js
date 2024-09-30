@@ -5,7 +5,6 @@ const functions = {
     // Todo use typeof and throw
 
       
-
       if(typeof a === "number" && typeof b === "number"){
         return(a + b);
       }else{

@@ -4,41 +4,53 @@ const functions = {
   // This function takes an array of numbers and returns a new array with each number squared.
   squareNumbers(numbers) {
     // square numbers;
-    const squared = numbers;
-    return squared;
+
+    const squared = (x) => x * x;
+
+    return numbers.map(squared);
   },
 
   // This function takes an array of strings and returns a new array with only the strings that contain the letter 'a'.
   filterStrings(strings) {
     // filter
-    const filteredStrings = strings;
-    return filteredStrings;
+    const checka = (x) => x.includes('a');
+    let result = strings.filter(checka);
+
+    return result;
   },
 
   // This function takes an array of numbers and returns the sum of all the numbers in the array.
   sumReduceNumbers(numbers) {
-    const sum = 0;
-    return sum;
+    let result = 0;
+    function add(number){
+      result = result + number
+    }
+    numbers.forEach(add);
+    return result;
+    // return number.reduce((prev, curr) => prev + curr, 0)
   },
 
   // removes last element of an array and returns it
   helper1(array) {
-    return array;
+    return array.pop();
   },
 
   // add one element to an array
   helper2(arr, newOne) {
-    return newOne;
+    const tab = arr.push(newOne);
+    return arr;
   },
 
   // removes first element from an array and returns a new array
   helper3(arr) {
-    return arr;
+    let tab = arr.shift();
+    return tab;
   },
 
   // add elements to the top of an array
   helper4(arr, ...elements) {
-    return [];
+    const tab = arr.unshift(...elements)
+    return arr;
   },
 
 
