@@ -56,27 +56,39 @@ const functions = {
 
   // takes an array, a starting index, the number of elements to remove, and any number of additional items to insert into the array at the specified starting index
   helper5(arr, start, deleteCount, ...items) {
-    return [arr, start, deleteCount, ...items];
+    let deleted = [];
+    if(deleteCount != 0){
+      deleted.push(arr[start]);
+    }
+    
+    arr.splice(start, deleteCount, ...items);
+    return deleted;
   },
 
   // takes an array and two indices (start and end) as parameters, and returns a new array containing the elements from the original array between the start and end indices (excluding the element at the end index)
   helper6(array, start, end) {
-    return [start, end];
+    let newArr = array.slice(start, end);
+    return newArr;
   },
 
   // concat two arrays
   helper7(arr1, arr2) {
-    return arr1;
+    let newArr = [];
+    newArr.push(...arr1, ...arr2);
+    return newArr;
   },
 
   // see unit tests for helper8 function
   helper8(arr, element) {
-    return element;
+    let index =  arr.indexOf(element);
+    return index;
   },
 
   // see unit tests for helper9 function
   helper9(array, value) {
-    return value;
+    let bool = false;
+    array.forEach((element) => {if (element === value){bool = true} })
+    return bool;
   },
 
   // see unit tests for helper10 function
@@ -91,17 +103,18 @@ const functions = {
 
   // takes an array arr and a callback function, and returns a boolean value indicating whether every element in the array satisfies the condition specified by the callback function
   helper12(arr, callback) {
-    return callback();
+    return arr.every(callback);
   },
 
   // takes an array arr and a callback function, returns true if at least one element in the array satisfies the condition specified in the callback function
   helper13(arr, funcCallback) {
-    return funcCallback();
+    return arr.some(funcCallback);
   },
 
 // see unit tests for helper14 function
   helper14(arr, separator) {
-    return [arr, separator];
+    let chaine = arr.join(separator);
+    return chaine;
   },
 
   // takes an array of numbers and returns the sum of all the numbers in the array using forEach.
