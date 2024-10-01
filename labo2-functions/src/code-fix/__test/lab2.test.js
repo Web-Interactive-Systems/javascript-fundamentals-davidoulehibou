@@ -264,3 +264,4 @@ describe("Test of Functions —lab2", () => {
     expect(result).toBe(0);
   });
 });
+

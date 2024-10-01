@@ -1,54 +1,69 @@
-// TODO: Fix the errors in the functions below!
+// TODO: Fix the errors in the functions below! 
 
 function addTask(taskList, newTask) {
-  return newTask;
+  taskList.push(newTask);
+  return taskList;
 }
 
 function deleteTask(taskList, index) {
-  return index;
+  taskList.splice(index, 1);
+  return taskList;
 }
 
 function editTask(taskList, index, editedTask) {
-  return editedTask;
+  taskList.splice(index, 1, editedTask);
+  return taskList;
 }
 
 function completeTask(taskList, index) {
-  return index;
+  taskList[index].completed = true
+  return taskList;
 }
 
 function clearCompletedTasks(taskList) {
-  return taskList;
+  
+  return taskList.filter((e) => e.completed === false);
 }
 
 function sortTasksByDate(taskList) {
-  return taskList;
+  const sortByDate = (a, b) => {
+    return a.date - b.date;
+  }
+  return taskList.sort(sortByDate);
 }
 
 function filterTasksByKeyword(taskList, keyword) {
-  return taskList;
+  const filterByKeyWord = (e) => {
+    e1 = e.toUpperCase();
+    return e1.includes(keyword.toUpperCase());
+  }
+  return taskList.filter(filterByKeyWord);
 }
 
 function getCompletedTasks(taskList) {
-  return taskList;
+  return taskList.filter((e) => e.completed === true);
 }
 
 function getIncompleteTasks(taskList) {
-  return taskList;
+  return taskList.filter((e) => e.completed !== true);
 }
 
 function getTaskCount(taskList) {
-  return taskList;
+  return taskList.length;
 }
 
 function getCompletedTaskCount(taskList) {
-  return taskList;
+  const completed = taskList.filter((e) => e.completed === true)
+  return completed.length;
 }
 
 function getIncompleteTaskCount(taskList) {
-  return taskList;
+  const completed = taskList.filter((e) => e.completed !== true)
+  return completed.length;
 }
 
 function removeCompletedTasks(taskList) {
+  
   return taskList;
 }
 
